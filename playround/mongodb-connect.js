@@ -24,11 +24,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     age: 31,
     location: "Western Australia"
   }, (err, result) => {
-    if(err) {
+    if (err) {
       return console.log('Unable to insert new record', err);
     }
-    console.log(result.ops);
-  })
+    console.log(JSON.stringify(result.ops, undefined, 2));
+  });
 
   client.close();
 });
